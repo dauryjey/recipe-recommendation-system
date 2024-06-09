@@ -18,7 +18,7 @@ base a ello.
 ## Requisitos técnicos
 
 + Plataformas: Web, Mobile.
-+ Tecnologías: React Native, MongoDB, Express.
++ Tecnologías: React, MongoDB, Express.
 
 # Flujos de navegación
 
