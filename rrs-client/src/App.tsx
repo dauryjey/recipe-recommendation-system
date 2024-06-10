@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { useTheme } from "./hooks/use-theme"
 import { useState } from "react"
-import { IMeals } from "./types/meals"
 
 function App() {
   const { toggleTheme } = useTheme()
