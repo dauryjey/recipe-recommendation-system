@@ -53,3 +53,7 @@ type Meal = {
   strCreativeCommonsConfirmed: string | null
   dateModified: string | null
 }
+
+interface apiMeal {
+  meals: Meal[]
+}
