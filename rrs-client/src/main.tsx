@@ -1,22 +1,25 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { BrowserRouter } from "react-router-dom"
-
-import App from "./App.tsx"
-import { Provider } from "./provider.tsx"
 import "@/styles/globals.css"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Root } from "@/routes/root"
+import { RandomMeal } from "./routes/randomMeal"
 
-const queryClient = new QueryClient()
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/randomMeal",
+        element: <RandomMeal />,
+      }
+    ]
+  },
+])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider>
-        <QueryClientProvider client={queryClient}>
-          <App />
-        </QueryClientProvider>
-      </Provider>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 )
