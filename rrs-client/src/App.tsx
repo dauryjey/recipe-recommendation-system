@@ -7,7 +7,10 @@ import { ThemeBtn } from "./components/ThemeBtn"
 function App() {
   const { theme, toggleTheme } = useTheme()
   const [favoriteMeals, setFavoritesMeals] = useState<Meal[]>(
-    () => JSON.parse(localStorage.getItem("favoriteMeals") || "") as Meal[] | []
+    () => {
+      const favoriteMeals = localStorage.getItem("favoriteMeals")
+      return favoriteMeals ? JSON.parse(favoriteMeals) : []
+    }
   )
   const { data, error, isPending, isFetching, refetch } = useFetchMeal()
 
